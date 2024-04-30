@@ -2,12 +2,9 @@ package org.nn.service;
 
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.Spy;
 import org.nn.entity.VehicleDataPoint;
 import org.nn.repository.VehicleDataPointRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +26,7 @@ class DataHandlerServiceTest {
     @Autowired
     private DataHandlerService dataHandlerService;
 
-    //TODO: fix tests
+    //TODO: Add tests
 
     @SneakyThrows
     @Test
@@ -39,7 +36,6 @@ class DataHandlerServiceTest {
 
         //Act
         List<VehicleDataPoint> actualVehicleDataPoints = dataHandlerService.saveDataPoints(file);
-        Mockito.when(vehicleDataRepository.findAll()).thenReturn(actualVehicleDataPoints);
 
         //Assert
         Assertions.assertEquals(DATA_POINTS_COUNT, actualVehicleDataPoints.size());
